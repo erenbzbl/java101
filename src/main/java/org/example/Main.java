@@ -1,37 +1,36 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        double  boy;
-        double  kilo;
-        double  sonuc;
+        double armut = 2.14;
+        double elma = 3.67;
+        double domates = 1.11;
+        double muz = 0.95;
+        double patlican = 5.00;
 
+        double armutKilo, elmaKilo, domatesKilo, muzKilo, patlicanKilo;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Lütfen kilonuzu giriniz: ");
-        kilo = scanner.nextDouble();
+        System.out.print("Armut Kaç Kilo?: ");
+        armutKilo = scanner.nextDouble();
 
-        System.out.print("Lütfen Boyunuzu Giriniz: ");
-        boy = scanner.nextDouble();
+        System.out.print("Elma Kaç Kilo?: ");
+        elmaKilo = scanner.nextDouble();
 
-        sonuc = kilo / (boy * boy);
+        System.out.print("Domates Kaç Kilo?: ");
+        domatesKilo = scanner.nextDouble();
 
-        if (sonuc <= 18.5){
-            System.out.println("Zayıf: " + sonuc);
-        }
-        else if (sonuc >= 18.5 && sonuc <= 24.9){
-            System.out.println("Normal Kilolu " + sonuc);
-        }
-        else if (sonuc >= 24.9 && sonuc <= 29.9){
-            System.out.println("Fazla Kilolu " + sonuc);
-        }
-        else if (sonuc >= 29.9 && sonuc <= 34.9){
-            System.out.println("Obez " + sonuc);
-        }
-        else if (sonuc >= 34.9 && sonuc <= 39.9){
-            System.out.println("Aşırı Obez " + sonuc);
-        }
-        else if (sonuc >= 39.9 && sonuc >= 40.0){
-            System.out.println("Morbid Obez " + sonuc);
-        }
+        System.out.print("Muz Kaç Kilo?: ");
+        muzKilo = scanner.nextDouble();
+
+        System.out.print("Patlıcan Kaç Kilo: ");
+        patlicanKilo = scanner.nextDouble();
+
+        double toplamTutar = (armutKilo * armut) +
+                (elmaKilo * elma) +
+                (domatesKilo * domates) +
+                (muzKilo * muz) +
+                (patlicanKilo * patlican);
+        
+        System.out.println("Toplam: " + toplamTutar + " TL");
     }
 }
