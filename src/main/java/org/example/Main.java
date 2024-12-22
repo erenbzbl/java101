@@ -3,22 +3,38 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int heat;
+        int a, b, c;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Lütfen bir sıcaklık değeri girin: ");
-        heat = scanner.nextInt();
+        System.out.print("1. Sayıyı Giriniz: ");
+        a = scanner.nextInt();
+        System.out.print("2. Sayıyı Giriniz: ");
+        b = scanner.nextInt();
+        System.out.print("3. Sayıyı Giriniz: ");
+        c = scanner.nextInt();
 
-        if (heat < 5) {
-            System.out.println("Kayak Yapabilirsiniz");
+        if (a < b && a < c) {
+            if (b < c) {
+            System.out.println("a < b < c");
         }
-        else if (heat >= 5 && heat <= 15) {
-            System.out.println("Sinemaya Gidebilirsiniz");
+        else {
+            System.out.println("a < c < b");
         }
-        else if (heat > 15 && heat <= 25) {
-            System.out.println("Piknik yapabilirsiniz");
         }
-        else if (heat > 25) {
-            System.out.println("Yüzmeye Gidebilirsiniz");
+        if (b < c && b < a) {
+            if (a < c) {
+                System.out.println("b < a < c");
+            } else {
+                System.out.println("b < c < a");
+            }
+        }
+        if (c < b && c < a) {
+            if (a < b) {
+                System.out.println("c < a < b");
+            }
+            else {
+                System.out.println("c < b < a");
+            }
+        }
         }
     }
-}
+
