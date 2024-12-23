@@ -6,51 +6,41 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Kullanıcıdan girişler alınır
-        System.out.print("Mesafeyi (KM) giriniz: ");
-        double distance = scanner.nextDouble();
+        int year;
+        int zodiac;
+        System.out.print("Doğum Tarihini Giriniz: ");
+        year = scanner.nextInt();
 
-        System.out.print("Yaşınızı giriniz: ");
-        int age = scanner.nextInt();
-
-        System.out.println("Yolculuk Tipini Seçiniz:");
-        System.out.println("1. Tek Yön");
-        System.out.println("2. Gidiş-Dönüş");
-        System.out.print("Seçiminizi yapınız (1 veya 2): ");
-        int tripType = scanner.nextInt();
-
-        // Kullanıcıdan alınan değerlerin geçerliliğini kontrol et
-        if (distance <= 0 || age <= 0 || (tripType != 1 && tripType != 2)) {
-            System.out.println("Hatalı Veri Girdiniz!");
-            return; // Program sonlandırılır
+        if (year > 2024) {
+            System.out.println("Geçersiz Yıl");
         }
 
-        // Mesafe başına ücret
-        double pricePerKm = 0.10;
-        double totalPrice = distance * pricePerKm;
+        zodiac = year % 12;
 
-        // Yaş indirimi
-        double discount = 0;
-        if (age < 12) {
-            discount = totalPrice * 0.50; // %50 indirim
-        } else if (age >= 12 && age <= 24) {
-            discount = totalPrice * 0.10; // %10 indirim
-        } else if (age > 65) {
-            discount = totalPrice * 0.30; // %30 indirim
+        if (zodiac == 0) {
+            System.out.print("Çin Zodyağı Burcunuz : Maymun");
+        } else if (zodiac == 1) {
+            System.out.print("Çin Zodyağı Burcunuz: Horoz");
+        } else if (zodiac == 2) {
+            System.out.print("Çin Zodyağı Burcunuz: Köpek");
+        } else if (zodiac == 3) {
+            System.out.println("Çin Zodyağı Burcunuz: Domuz");
+        } else if (zodiac == 4) {
+            System.out.println("Çin Zodyağı Burcunuz: Fare");
+        } else if (zodiac == 5) {
+            System.out.println("Çin Zodyağı Burcunuz: Öküz");
+        } else if (zodiac == 6) {
+            System.out.println("Çin Zodyağı Burcunuz: Kaplan");
+        } else if (zodiac == 7) {
+            System.out.println("Çin Zodyağı Burcunuz: Tavşan");
+        } else if (zodiac == 8) {
+            System.out.println("Çin Zodyağı Burcunuz: Ejderha");
+        } else if (zodiac == 9) {
+            System.out.println("Çin Zodyağı Burcunuz: Yılan");
+        } else if (zodiac == 10) {
+            System.out.println("Çin Zodyağı Burcunuz: At");
+        } else if (zodiac == 11) {
+            System.out.println("Çin Zodyağı Burcunuz: Koyun");
         }
-
-        // İndirimli fiyatı hesapla
-        totalPrice -= discount;
-
-        // Yolculuk tipi indirimi
-        if (tripType == 2) { // Gidiş-Dönüş
-            totalPrice -= totalPrice * 0.20; // %20 indirim
-            totalPrice *= 2; // Gidiş-Dönüş fiyatı
-        }
-
-        // Sonuçları ekrana yazdır
-        System.out.println("Toplam Bilet Fiyatı: " + totalPrice + " TL");
-
-        scanner.close();
     }
 }
