@@ -5,42 +5,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int number;
+        int total = 0;
 
-        int year;
-        int zodiac;
-        System.out.print("Doğum Tarihini Giriniz: ");
-        year = scanner.nextInt();
+        do {
+            System.out.print("Bir Sayı Giriniz: ");
+            number = scanner.nextInt();
+            if (number % 2 == 0 && number % 4 == 0) {
+                total += number;
 
-        if (year > 2024) {
-            System.out.println("Geçersiz Yıl");
-        }
+            }else if (number % 2 ==1){
+                break;
+            }
 
-        zodiac = year % 12;
-
-        if (zodiac == 0) {
-            System.out.print("Çin Zodyağı Burcunuz : Maymun");
-        } else if (zodiac == 1) {
-            System.out.print("Çin Zodyağı Burcunuz: Horoz");
-        } else if (zodiac == 2) {
-            System.out.print("Çin Zodyağı Burcunuz: Köpek");
-        } else if (zodiac == 3) {
-            System.out.println("Çin Zodyağı Burcunuz: Domuz");
-        } else if (zodiac == 4) {
-            System.out.println("Çin Zodyağı Burcunuz: Fare");
-        } else if (zodiac == 5) {
-            System.out.println("Çin Zodyağı Burcunuz: Öküz");
-        } else if (zodiac == 6) {
-            System.out.println("Çin Zodyağı Burcunuz: Kaplan");
-        } else if (zodiac == 7) {
-            System.out.println("Çin Zodyağı Burcunuz: Tavşan");
-        } else if (zodiac == 8) {
-            System.out.println("Çin Zodyağı Burcunuz: Ejderha");
-        } else if (zodiac == 9) {
-            System.out.println("Çin Zodyağı Burcunuz: Yılan");
-        } else if (zodiac == 10) {
-            System.out.println("Çin Zodyağı Burcunuz: At");
-        } else if (zodiac == 11) {
-            System.out.println("Çin Zodyağı Burcunuz: Koyun");
-        }
+        } while (number > 0);
+        System.out.println("Total : " + total);
     }
 }
