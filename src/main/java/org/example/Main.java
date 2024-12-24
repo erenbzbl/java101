@@ -13,19 +13,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int n,k;
 
-        System.out.print("Lütfen n değerini giriniz: ");
-        int n = scanner.nextInt();
-        System.out.print("Lütfen r değerini giriniz: ");
-        int r = scanner.nextInt();
+        System.out.print("Üssü alınacak sayıyı giriniz: ");
+        n = scanner.nextInt();
+        System.out.print("Üssü alınacak sayıyı çarpan sayıyı giriniz: ");
+        k = scanner.nextInt();
 
-        if (r > n) {
-            System.out.println("Hatalı giriş! r değeri n'den büyük olamaz.");
-        } else {
-            int combination = factorial(n) / (factorial(r) * factorial(n - r));
-            System.out.println("C(" + n + "," + r + ") = " + combination);
+        int total =1;
+        for (int i = 1; i <= k; i++) {
+           total *= n;
         }
-
-        scanner.close();
+        System.out.println(total);
     }
 }
