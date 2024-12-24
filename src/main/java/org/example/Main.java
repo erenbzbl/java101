@@ -3,15 +3,29 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+    public static int factorial(int num) {
+        int result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-       int n;
-        System.out.print("Bir Sayı Giriniz: ");
-        n = scanner.nextInt();
-        for (int i = 1; i <= n; i*=4) {
-            System.out.println("4'ün katları " + i);
-        } for (int i = 1; i <= n; i*=5) {
-            System.out.println("5'in katları" + i);
+
+        System.out.print("Lütfen n değerini giriniz: ");
+        int n = scanner.nextInt();
+        System.out.print("Lütfen r değerini giriniz: ");
+        int r = scanner.nextInt();
+
+        if (r > n) {
+            System.out.println("Hatalı giriş! r değeri n'den büyük olamaz.");
+        } else {
+            int combination = factorial(n) / (factorial(r) * factorial(n - r));
+            System.out.println("C(" + n + "," + r + ") = " + combination);
         }
+
+        scanner.close();
     }
 }
