@@ -1,20 +1,35 @@
 package org.example;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Bir sayı giriniz: ");
-        double sayi = scanner.nextInt();
-        double toplam = 0;
+        System.out.print("Üçgenin yarı çapını giriniz: ");
+        int n = scanner.nextInt();
+        int toplam = 0;
 
-        for (double i = 1; i <= sayi; i++) {
-            toplam += 1.0 / i;
-            System.out.println(toplam);
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= (n-i); j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= (2*i) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
 
-        System.out.println("Harmonik Toplam: " + toplam); // Sonucu yazdır
+        for (int i = n - 1; i >= 1; i--){
+            for (int j = 1; j <= (n-i); j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= (2*i) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
     }
 }
