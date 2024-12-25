@@ -1,91 +1,38 @@
-package org.example;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Birinci sayıyı girin: ");
+        int sayi1 = scanner.nextInt();
+        System.out.print("İkinci sayıyı girin: ");
+        int sayi2 = scanner.nextInt();
 
-        int right = 3;
-        double balance = 1500;
-        boolean loginSuccess = false;
+        int min = 1;
 
-        while (right > 0 && !loginSuccess) {
-            System.out.print("Kullanıcı Adını Giriniz: ");
-            String username = scanner.nextLine();
-            System.out.print("Şifrenizi Giriniz: ");
-            String password = scanner.nextLine();
-
-            switch (username + ":" + password) {
-                case "eren:123":
-                    System.out.println("Giriş başarılı! Hoş geldin, " + username + ".");
-                    loginSuccess = true;
-                    break;
-                default:
-                    right--;
-                    System.out.println("Giriş başarısız! Kalan Hakkın: " + right);
-                    break;
-            }
+        if (sayi1 == sayi2) {
+            System.out.println("Ebob: " + sayi1);
+            System.out.println("Ekok: " + sayi2);
+        }else if (sayi1 > sayi2) {
+            min = sayi2;
+        } else if (sayi2 > sayi1) {
+            min = sayi1;
         }
 
-        while (loginSuccess) {
-            System.out.println("\nMENÜ:");
-            System.out.println("1 - Para Yatır");
-            System.out.println("2 - Para Çek");
-            System.out.println("3 - Bakiye Görüntüle");
-            System.out.println("4 - Çıkış Yap");
-            System.out.print("Seçiminiz: ");
-            int choice = scanner.nextInt();
+        int ebob = 1;
 
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Yatırmak istediğiniz miktarı giriniz: ");
-                    double deposit = scanner.nextDouble();
-
-                    switch ((deposit > 0) ? "valid" : "invalid") {
-                        case "valid":
-                            balance += deposit;
-                            System.out.println("Başarılı bir şekilde " + deposit + " TL yatırıldı.");
-                            break;
-                        case "invalid":
-                            System.out.println("Geçersiz miktar. Lütfen pozitif bir değer giriniz.");
-                            break;
-                    }
-                    break;
-
-                case 2:
-                    System.out.print("Çekmek istediğiniz miktarı giriniz: ");
-                    double withdrawl  = scanner.nextDouble();
-
-                    switch ((withdrawl < balance) ? "valid" : "invalid") {
-                        case "valid":
-                            balance -= withdrawl;
-                            System.out.println("Başarılı bir şekilde " + withdrawl + " TL çekildi.");
-                            break;
-                        case "invalid":
-                            System.out.println("Geçersiz miktar. Bakiyeniz yeterli değil.");
-                            break;
-                    }
-                    break;
-
-                case 3:
-                    System.out.println(balance + " TL");
-                    break;
-                case 4:
-                    System.out.println("Çıkış Yapılıyor Güle Güle");
-                    loginSuccess = false;
-                    break;
-            }
-        }
-
-        switch (right) {
-            case 0:
-                System.out.println("Giriş hakkınız tükendi! Programdan çıkılıyor...");
+        while (min > 0) {
+            if (sayi1 % min == 0 && sayi2 % min == 0) {
+                ebob = min;
                 break;
+            }
+            min--;
         }
 
-    }
+        int ekok = (sayi1 * sayi2) / ebob;
 
+        System.out.println("Ebob: " + ebob);
+        System.out.println("Ekok: " + ekok);
+    }
 }
