@@ -4,26 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Kaç sayı gireceksiniz?: ");
-        int n = scanner.nextInt();
-
-        System.out.print("1.Sayıyı Giriniz: ");
+        System.out.print("Bir Sayı Giriniz : ");
         int sayi = scanner.nextInt();
 
-        int enBuyukSayi = 1;
-        int enKucukSayi = 1;
-
-
-        for (int i =2; i <= n; i++){
-            System.out.print(i + ".Sayıyı Giriniz: ");
-            sayi = scanner.nextInt();
-
-            if (sayi > enBuyukSayi){
-                enBuyukSayi = sayi;
-            }if (sayi < enKucukSayi){
-                enKucukSayi = sayi;
+        int toplam = 0;
+        for (int i = 1; i < sayi; i++) {
+            if (sayi % i == 0) {
+                toplam += i;
             }
         }
-        System.out.println("En büyük sayı: " + enBuyukSayi + "\nEn küçük sayı: " + enKucukSayi);
+        if (toplam == sayi) {
+            System.out.println(sayi + " mükemmel sayıdır.");
+        } else {
+            System.out.println(sayi + " mükemmel sayı değildir.");
+        }
     }
 }
