@@ -4,35 +4,26 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Birinci sayıyı girin: ");
-        int sayi1 = scanner.nextInt();
-        System.out.print("İkinci sayıyı girin: ");
-        int sayi2 = scanner.nextInt();
+        System.out.print("Kaç sayı gireceksiniz?: ");
+        int n = scanner.nextInt();
 
-        int min = 1;
+        System.out.print("1.Sayıyı Giriniz: ");
+        int sayi = scanner.nextInt();
 
-        if (sayi1 == sayi2) {
-            System.out.println("Ebob: " + sayi1);
-            System.out.println("Ekok: " + sayi2);
-        }else if (sayi1 > sayi2) {
-            min = sayi2;
-        } else if (sayi2 > sayi1) {
-            min = sayi1;
-        }
+        int enBuyukSayi = 1;
+        int enKucukSayi = 1;
 
-        int ebob = 1;
 
-        while (min > 0) {
-            if (sayi1 % min == 0 && sayi2 % min == 0) {
-                ebob = min;
-                break;
+        for (int i =2; i <= n; i++){
+            System.out.print(i + ".Sayıyı Giriniz: ");
+            sayi = scanner.nextInt();
+
+            if (sayi > enBuyukSayi){
+                enBuyukSayi = sayi;
+            }if (sayi < enKucukSayi){
+                enKucukSayi = sayi;
             }
-            min--;
         }
-
-        int ekok = (sayi1 * sayi2) / ebob;
-
-        System.out.println("Ebob: " + ebob);
-        System.out.println("Ekok: " + ekok);
+        System.out.println("En büyük sayı: " + enBuyukSayi + "\nEn küçük sayı: " + enKucukSayi);
     }
 }
