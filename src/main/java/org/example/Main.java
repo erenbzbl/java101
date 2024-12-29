@@ -4,14 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Bir Sayı Giriniz : ");
-        int sayi = scanner.nextInt();
+        System.out.print("Fibonacci serisinin eleman sayısını girin: ");
+        int elemanSayisi = scanner.nextInt();
 
-        for (int i = sayi; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        int ilk = 0, ikinci = 1;
+
+        System.out.println("Fibonacci Hesaplaması:");
+        for (int i = 1; i <= elemanSayisi; i++) {
+            int yeni = ilk + ikinci;
+            System.out.println(ilk + " + " + ikinci + " = " + yeni);
+            ilk = ikinci;
+            ikinci = yeni;
         }
+
+        scanner.close();
     }
 }
